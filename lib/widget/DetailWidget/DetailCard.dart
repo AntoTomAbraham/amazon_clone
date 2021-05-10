@@ -95,9 +95,13 @@ class DetailCard extends StatelessWidget {
                       children: <Widget>[
                         frowDivider(),
                         lineDivider(),
-                        rowDivider(),
-                        rowDivider(),
-                        rowDivider(),
+                        rowDivider('No Cost EMI :', 'Upto 3999 No EMI',
+                            "interest saving on amazon pay ICICI.."),
+                        lineDivider(),
+                        rowDivider('cashback(3) :', 'Get flat 500 with',
+                            "Amazon pay later offer applicable"),
+                        lineDivider(),
+                        lRowDivider(),
                       ],
                     ),
                   )
@@ -117,9 +121,40 @@ class DetailCard extends StatelessWidget {
     );
   }
 
-  Widget rowDivider() {
-    return Row(
-      children: <Widget>[],
+  Widget rowDivider(String tex1, String tex2, String tex3) {
+    return Container(
+      alignment: new FractionalOffset(0.0, 0.9),
+      child: Column(
+        children: <Widget>[
+          Container(
+            alignment: new FractionalOffset(0.0, 0.9),
+            child: RichText(
+              text: TextSpan(
+                text: tex1,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red,
+                    fontSize: 16),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: tex2,
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black)),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            alignment: new FractionalOffset(0.0, 0.9),
+            child: Text(
+              tex3,
+              style: TextStyle(fontSize: 18),
+            ),
+          )
+        ],
+      ),
     );
   }
 
@@ -153,6 +188,20 @@ class DetailCard extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget lRowDivider() {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: <Widget>[
+          Text(
+            "see 2 more offers",
+            style: TextStyle(color: Colors.cyan),
+          )
+        ],
+      ),
     );
   }
 }
