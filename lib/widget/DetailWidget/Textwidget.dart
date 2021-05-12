@@ -4,10 +4,12 @@ class Textwidget extends StatelessWidget {
   String data;
   double size;
   Color colour;
+  FontWeight fweight;
   Textwidget({
     this.data,
     this.size,
     this.colour,
+    this.fweight,
   });
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class Textwidget extends StatelessWidget {
         style: TextStyle(
           color: colour,
           fontSize: size,
+          fontWeight: fweight != Null ? fweight : FontWeight.normal,
         ),
       ),
     );
