@@ -1,3 +1,4 @@
+import 'package:amazon_app/views/AuthUI.dart';
 import 'package:flutter/material.dart';
 
 class AppBarr extends StatelessWidget {
@@ -13,11 +14,15 @@ class AppBarr extends StatelessWidget {
               Row(
                 children: <Widget>[
                   IconButton(
-                      icon: Icon(
-                        Icons.menu,
-                        color: Colors.black,
-                      ),
-                      onPressed: null),
+                    icon: Icon(
+                      Icons.menu,
+                      color: Colors.black,
+                    ),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => AuthUI()));
+                    },
+                  ),
                   Container(
                     width: 90,
                     height: 42,
